@@ -2,7 +2,7 @@
 session_start();
 include "helper/db.php";
 if (!isset($_SESSION['admin'])) {
-    header("location:index.php");
+    echo "<script>alert('User cannot access admin panel');window.location='../login.php'</script>";
 }
 if (isset($_POST['add_category'])) {
     $sub_cat_name = mysqli_real_escape_string($con, $_POST['sub_cat_name']);

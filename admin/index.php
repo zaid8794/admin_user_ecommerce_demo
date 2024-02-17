@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['admin'])) {
+    echo "<script>alert('User cannot access admin panel');window.location='../login.php'</script>";
+}
 ?>
 <!doctype html>
 <html lang="en">
